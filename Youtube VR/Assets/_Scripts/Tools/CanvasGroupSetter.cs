@@ -17,6 +17,18 @@ namespace Tools
             Set(canvasGroup, false);
         }
 
+        public static void ShowEnableGO(CanvasGroup canvasGroup)
+        {
+            Set(canvasGroup, true);
+            canvasGroup.gameObject.SetActive(true);
+        }
+
+        public static void HideDisableGO(CanvasGroup canvasGroup)
+        {
+            Set(canvasGroup, false);
+            canvasGroup.gameObject.SetActive(false);
+        }
+
         private static void Set(CanvasGroup canvasGroup, bool show)
         {
             canvasGroup.alpha = (show == true) ? SHOW_ALPHA : HIDE_ALPHA;

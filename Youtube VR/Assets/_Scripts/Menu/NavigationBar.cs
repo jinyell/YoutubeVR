@@ -5,20 +5,58 @@ namespace TubeVR
 {
     public class NavigationBar : MonoBehaviour
     {
-        [System.Serializable]
-        public class NavItem
+        [SerializeField] private MenuNavigator menuNavigator;
+        [SerializeField] private NavItem[] navItems;
+
+        [SerializeField] private NavItem current;
+
+        public void OnNone()
         {
-            public Menu menu;
-            public Image icon;
+            if(current != null) {
+                current.Unfocus();
+                current = null;
+            }
         }
 
-        [SerializeField] private NavItem[] navItems;
-        private Menu current;
-
-        public void OnNav(string nav)
+        public void OnSetNavSelection(Menu menu)
         {
-            Menu menu = (Menu)System.Enum.Parse((typeof(Menu)), nav);
+            for (int i = 0; i < navItems.Length; i++)
+            {
+                if(navItems[i].Menu == menu)
+                {
+                    if (current != null)
+                    {
+                        current.Unfocus();
+                    }
 
+                    current = navItems[i];
+                    current.OnSelect();
+                }
+            }
+        }
+
+        public void OnNav(NavItem navItem)
+        {
+            if(menuNavigator.Menu == navItem.Menu) {
+                return;
+            }
+
+            if(current != null) {
+                current.Unfocus();
+            }
+
+            current = navItem;
+            menuNavigator.ShowMenu(current.Menu);
+        }
+
+        private void Awake()
+        {
+            current = navItems[0];
+        }
+
+        private void Start()
+        {
+            current.OnSelect();
         }
     }
 }

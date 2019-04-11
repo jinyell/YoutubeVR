@@ -21,12 +21,12 @@ namespace TubeVR
 
         [SerializeField] private SwipeItem[] items;
         private Vector3[] positions;
-        [SerializeField] private Video[] swipeItems;
+        [SerializeField] private Item[] swipeItems;
         private int currentIndex = 0;
 
         private bool setup = true;
         
-        public void SetupSwipe(Video[] items)
+        public void SetupSwipe(Item[] items)
         {
             if(setup == true)
             {

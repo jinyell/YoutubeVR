@@ -10,13 +10,13 @@ namespace TubeVR
         [SerializeField] private Text title;
         [SerializeField] private Text description;
 
-        [SerializeField] private Video video;
+        [SerializeField] private Item video;
         private Tools.FetchImage fetchImage;
 
-        public void Setup(Video video)
+        public void Setup(Item video)
         {
             this.video = video;
-            this.title.text = video.snippet.channelTitle;
+            this.title.text = video.snippet.title;
             this.description.text = video.snippet.description;
             CheckImage();
         }

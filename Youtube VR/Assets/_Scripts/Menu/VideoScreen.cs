@@ -1,18 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TubeVR
 {
     public class VideoScreen : Screen
     {
-        [SerializeField] private Swipe swipe;
-
-        public override void Setup(GuideCategories guideCategories)
-        {
-            base.Setup(guideCategories);
-            swipe.SetupSwipe(guideCategories.items);
-        }
+        [SerializeField] protected Swipe swipe;
 
         public override void Show()
         {

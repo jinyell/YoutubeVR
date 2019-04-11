@@ -8,9 +8,9 @@ namespace TubeVR
         private const string CONTENT_TYPE = "Content-Type";
         private const string APPLICATION = "application/json";
         
-        public static string ConstructRecommendedListsURL()
+        public static string ConstructPersonalPlaylistURL()
         {
-            string url = Endpoints.BASE_URL + Endpoints.VIDEO_CATEGORIES;
+            string url = Endpoints.BASE_URL + Endpoints.PERSONAL_PLAYLIST;
             url = url.Replace(Endpoints.KEY, SessionAdministrator.Instance.Key);
             url = url.Replace(Endpoints.MAX_RESULTS, 5.ToString());
             return url;
@@ -20,7 +20,8 @@ namespace TubeVR
         {
             string url = Endpoints.BASE_URL + Endpoints.SEARCH_REQUEST;
             url = url.Replace(Endpoints.KEY, SessionAdministrator.Instance.Key);
-            url = url.Replace(Endpoints.SEARCH_REQUEST, search);
+            url = url.Replace(Endpoints.SEARCH, search);
+            url = url.Replace(Endpoints.MAX_RESULTS, 5.ToString());
             return url;
         }
 
