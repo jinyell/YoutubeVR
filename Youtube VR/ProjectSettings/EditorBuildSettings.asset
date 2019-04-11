@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/YoutubeVR.unity
+    path: Assets/_Scenes/Main.unity
     guid: a0b1b12314e06c84391cd99bc0d235f0
   m_configObjects: {}

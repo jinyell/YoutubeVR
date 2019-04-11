@@ -67,6 +67,7 @@
     <Compile Include="Assets\_Scripts\ImageCollector.cs" />
     <Compile Include="Assets\_Scripts\Items\VideoItem.cs" />
     <Compile Include="Assets\_Scripts\Menu\MenuNavigator.cs" />
+    <Compile Include="Assets\_Scripts\Menu\NavigationBar.cs" />
     <Compile Include="Assets\_Scripts\Menu\Screen.cs" />
     <Compile Include="Assets\_Scripts\Menu\VideoScreen.cs" />
     <Compile Include="Assets\_Scripts\SessionAdministrator.cs" />
@@ -1966,6 +1967,7 @@
     <None Include="Assets\JsonDotNet\link.xml" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_01.shader" />
+    <None Include="Assets\TEST Recommended List.txt" />
     <None Include="Assets\TEST.txt" />
     <None Include="Assets\Oculus\SampleFramework\Core\DebugUI\Fonts\Montserrat\OFL.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBSV2.shader" />

@@ -15,6 +15,13 @@ namespace TubeVR
 
         private Fetch channelFetch;
         private Fetch trendingFetch;
+        private Fetch searchFetch;
+        private Fetch homeFetch;
+
+        public void Search(string search)
+        {
+            SearchFetcher(search);
+        }
 
         private void Awake()
         {
@@ -29,7 +36,24 @@ namespace TubeVR
             guide = JsonConvert.DeserializeObject<GuideCategories>(allContent);
             menuNavigator.SetupMenu(Menu.TRENDING, guide);
             menuNavigator.ShowMenu(Menu.TRENDING);
+            HomeFetcher();
             //TrendingFetcher();
+        }
+
+        private void HomeFetcher()
+        {
+            homeFetch = new Fetch();
+            string url = EndpointHelper.ConstructRecommendedListsURL();
+            homeFetch.DownloadContent(url);
+            homeFetch.onError += OnError;
+        }
+
+        private void SearchFetcher(string search)
+        {
+            searchFetch = new Fetch();
+            string url = EndpointHelper.ConstructSearchURL(search);
+            searchFetch.DownloadContent(url);
+            searchFetch.onError += OnError;
         }
 
         private void TrendingFetcher()
@@ -40,7 +64,7 @@ namespace TubeVR
             trendingFetch.onError += OnError;
 
         }
-
+        
         private void ChannelFetcher(string channel)
         {
             channelFetch = new Fetch();
@@ -53,6 +77,7 @@ namespace TubeVR
         {
             channelFetch.onError -= OnError;
             trendingFetch.onError -= OnError;
+            homeFetch.onError -= OnError;
             menuNavigator.ShowMenu(Menu.ERROR);
         }
     }

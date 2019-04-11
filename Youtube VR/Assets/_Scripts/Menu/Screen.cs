@@ -8,7 +8,7 @@ namespace TubeVR
     [RequireComponent (typeof(CanvasGroup))]
     public class Screen : MonoBehaviour
     {
-        protected GuideCategories guideCategories;
+        [SerializeField] protected GuideCategories guideCategories;
         private CanvasGroup canvasGroup;
 
         public virtual void Setup(GuideCategories guideCategories)
@@ -16,17 +16,17 @@ namespace TubeVR
             this.guideCategories = guideCategories;
         }
 
-        public void Show()
+        public virtual void Show()
         {
             CanvasGroupSetter.Show(canvasGroup);
         }
 
-        public void Hide()
+        public virtual void Hide()
         {
             CanvasGroupSetter.Hide(canvasGroup);
         }
 
-        private void Awake()
+        protected virtual void Awake()
         {
             this.canvasGroup = this.GetComponent<CanvasGroup>();
         }

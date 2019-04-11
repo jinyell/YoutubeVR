@@ -23,7 +23,7 @@ namespace TubeVR
                 return;
             }
 
-            //DebugFile(response.DataAsText);
+            DebugFile(response.DataAsText);
             Debug.Log("URL " + request.Uri + " Response: " + response.DataAsText);
         }
 

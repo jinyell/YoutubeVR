@@ -13,6 +13,18 @@ namespace TubeVR
             base.Setup(guideCategories);
             swipe.SetupSwipe(guideCategories.items);
         }
+
+        public override void Show()
+        {
+            base.Show();
+            swipe.enabled = true;
+        }
+
+        public override void Hide()
+        {
+            base.Hide();
+            swipe.enabled = false;
+        }
     }
 }
 

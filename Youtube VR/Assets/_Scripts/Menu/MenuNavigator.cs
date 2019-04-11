@@ -9,6 +9,7 @@ namespace TubeVR
         ERROR,
         HOME,
         TRENDING,
+        SEARCH,
         NONE
     }
 

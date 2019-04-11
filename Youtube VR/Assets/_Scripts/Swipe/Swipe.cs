@@ -11,27 +11,33 @@ namespace TubeVR
             public RectTransform rectTrans;
             public int positionIndex;
         }
-
-        private const int HIDDEN_ITEMS = 3;
-        private const int SEMI_HIDDEN = 1;
-
+        
         [SerializeField] private RectTransform container;
         [SerializeField] private GameObject prefab;
         [SerializeField] private int total;
         [SerializeField] private float padding;
+        [SerializeField] private int hiddenItems = 3;
+        [SerializeField] private int semiHidden = 1;
 
-        private SwipeItem[] items;
+        [SerializeField] private SwipeItem[] items;
         private Vector3[] positions;
-        private Video[] swipeItems;
+        [SerializeField] private Video[] swipeItems;
         private int currentIndex = 0;
+
+        private bool setup = true;
         
         public void SetupSwipe(Video[] items)
         {
+            if(setup == true)
+            {
+                Setup();
+                setup = false;
+            }
             this.swipeItems = items;
             PopulateSwipeItems();
         }
 
-        private void Start()
+        private void Setup()
         {
             PopulateItems();
             CalculatePositions();
@@ -48,7 +54,7 @@ namespace TubeVR
                     Tools.CanvasGroupSetter.Show(items[i].go.GetComponent<CanvasGroup>());
                 }
 
-                if(i != 0) {
+                if(i != 0 && (i < swipeItems.Length)) {
                     items[i].go.GetComponent<VideoItem>().Setup(swipeItems[(i - 1)]);
                 }
             }
@@ -94,7 +100,7 @@ namespace TubeVR
 
         private void Instance_onUp()
         {
-            if (currentIndex >= (swipeItems.Length - HIDDEN_ITEMS)) {
+            if (currentIndex >= (swipeItems.Length - hiddenItems)) {
                 return;
             }
 
@@ -133,10 +139,10 @@ namespace TubeVR
                 items[i].rectTrans.localPosition = positions[items[i].positionIndex];
                 items[i].go.name = index.ToString();
 
-                if((currentIndex - (total - items[i].positionIndex) + HIDDEN_ITEMS + SEMI_HIDDEN) >= 0)
+                if((currentIndex - (total - items[i].positionIndex) + hiddenItems + semiHidden) >= 0)
                 {
                     Tools.CanvasGroupSetter.Show(items[i].go.GetComponent<CanvasGroup>());
-                    int swipeIndex = (currentIndex - (total - items[i].positionIndex) + HIDDEN_ITEMS + SEMI_HIDDEN);
+                    int swipeIndex = (currentIndex - (total - items[i].positionIndex) + hiddenItems + semiHidden);
                     swipeIndex = (swipeIndex >= swipeItems.Length) ? (swipeItems.Length - 1) : swipeIndex;
                     items[i].go.GetComponent<VideoItem>().Setup(swipeItems[swipeIndex]);
                 } else {
