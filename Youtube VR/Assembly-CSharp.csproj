@@ -86,12 +86,14 @@
     <Compile Include="Assets\_Scripts\Tools\Tags.cs" />
     <Compile Include="Assets\_Scripts\TubeVRInput.cs" />
     <Compile Include="Assets\_Scripts\TubeVRManager.cs" />
+    <Compile Include="Assets\_Scripts\TubeVRPlayer.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Id.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Item.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Key.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Localized.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\PageInfo.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\PlaylistsList.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\ResourceId.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\SearchList.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Snippet.cs" />
     <Compile Include="Assets\_Scripts\Youtube Objects\Thumbnail.cs" />

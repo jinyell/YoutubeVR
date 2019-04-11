@@ -19,5 +19,8 @@ namespace TubeVR
         public string defaultLanguage;
         public Localized localized;
         public string defaultAudioLanguage;
+        public string playlistID;
+        public int position;
+        public ResourceId resourceId;
     }
 }

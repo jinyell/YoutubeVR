@@ -8,6 +8,13 @@ namespace TubeVR
         private const string CONTENT_TYPE = "Content-Type";
         private const string APPLICATION = "application/json";
         
+        public static string ContructVideoURL(string id)
+        {
+            string url = Endpoints.STREAM_VIDEO;
+            url = url.Replace(Endpoints.VIDEO_ID, id);
+            return url;
+        }
+
         public static string ConstructPersonalPlaylistURL()
         {
             string url = Endpoints.BASE_URL + Endpoints.PERSONAL_PLAYLIST;

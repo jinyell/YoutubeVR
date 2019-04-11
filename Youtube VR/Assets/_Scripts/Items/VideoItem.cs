@@ -11,6 +11,7 @@ namespace TubeVR
         [SerializeField] private Text description;
 
         [SerializeField] private Item video;
+        public Item Item { get { return video; } }
         private Tools.FetchImage fetchImage;
 
         public void Setup(Item video)
