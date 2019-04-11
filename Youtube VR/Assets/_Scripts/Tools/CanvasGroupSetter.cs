@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Tools
 {
@@ -11,7 +9,7 @@ namespace Tools
 
         public static void Show(CanvasGroup canvasGroup)
         {
-            Set(canvasGroup, false);
+            Set(canvasGroup, true);
         }
 
         public static void Hide(CanvasGroup canvasGroup)

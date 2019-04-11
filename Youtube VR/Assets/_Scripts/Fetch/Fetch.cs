@@ -6,17 +6,11 @@ namespace TubeVR
 {
     public class Fetch
     {
-        //public delegate void PageDownloaded(Page downloadedPage);
-        //public event PageDownloaded onPageDownloaded = delegate { };
-
-        //private Page downloadedPage;
-        //public Page DownloadedPage { get { return downloadedPage; } }
-
-        public void DownloadChannel(string channel)
+        public delegate void OnError(int statusCode);
+        public OnError onError = delegate { };
+        
+        public void DownloadContent(string url)
         {
-            string url = Endpoints.CHANNELS;
-            url = url.Replace(Endpoints.KEY, SessionAdministrator.Instance.Key);
-            url = url.Replace(Endpoints.CHANNEL, channel);
             Debug.Log("<color=green> Fetching Page at: " + url + "</color>");
             EndpointHelper.SendAPIRequest(url, OnContentFetched);
         }
@@ -24,15 +18,20 @@ namespace TubeVR
         private void OnContentFetched(HTTPRequest request, HTTPResponse response)
         {
             if (response == null || response.IsSuccess == false) {
-                Debug.LogError("Error");
+                onError(response.StatusCode);
+                Debug.LogError("Error: " + response.Message + " | " + response.StatusCode);
                 return;
             }
 
-            //downloadedPage = JsonConvert.DeserializeObject<Page>(response.DataAsText);
-
+            //DebugFile(response.DataAsText);
             Debug.Log("URL " + request.Uri + " Response: " + response.DataAsText);
-            
-            //onPageDownloaded(downloadedPage);
+        }
+
+        private void DebugFile(string response)
+        {
+            string path = Application.dataPath + "/TEST.txt";
+            Debug.Log("path is : " + path);
+            System.IO.File.WriteAllText(path, response);
         }
     }
 }

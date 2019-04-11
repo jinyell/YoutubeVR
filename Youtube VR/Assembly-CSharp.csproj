@@ -63,11 +63,28 @@
     <Compile Include="Assets\_Scripts\EndpointHelper.cs" />
     <Compile Include="Assets\_Scripts\Endpoints.cs" />
     <Compile Include="Assets\_Scripts\Fetch\Fetch.cs" />
+    <Compile Include="Assets\_Scripts\Fetch\FetchImage.cs" />
+    <Compile Include="Assets\_Scripts\ImageCollector.cs" />
+    <Compile Include="Assets\_Scripts\Items\VideoItem.cs" />
+    <Compile Include="Assets\_Scripts\Menu\MenuNavigator.cs" />
+    <Compile Include="Assets\_Scripts\Menu\Screen.cs" />
+    <Compile Include="Assets\_Scripts\Menu\VideoScreen.cs" />
     <Compile Include="Assets\_Scripts\SessionAdministrator.cs" />
-    <Compile Include="Assets\_Scripts\TellyManager.cs" />
+    <Compile Include="Assets\_Scripts\Swipe\Swipe.cs" />
     <Compile Include="Assets\_Scripts\Tools\CanvasGroupSetter.cs" />
+    <Compile Include="Assets\_Scripts\Tools\GOCreator.cs" />
     <Compile Include="Assets\_Scripts\Tools\ReverseNormals.cs" />
     <Compile Include="Assets\_Scripts\Tools\SmoothMouseLook.cs" />
+    <Compile Include="Assets\_Scripts\Tools\Tags.cs" />
+    <Compile Include="Assets\_Scripts\TubeVRInput.cs" />
+    <Compile Include="Assets\_Scripts\TubeVRManager.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\GuideCategories.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\Key.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\Localized.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\PageInfo.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\Snippet.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\Thumbnail.cs" />
+    <Compile Include="Assets\_Scripts\Youtube Objects\Video.cs" />
     <Compile Include="Assets\Best HTTP (Pro)\BestHTTP\Authentication\Credentials.cs" />
     <Compile Include="Assets\Best HTTP (Pro)\BestHTTP\Authentication\Digest.cs" />
     <Compile Include="Assets\Best HTTP (Pro)\BestHTTP\Authentication\DigestStore.cs" />
@@ -1939,6 +1956,7 @@
     <None Include="Assets\Best HTTP (Pro)\ReleaseNotes.txt" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_02.shader" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
+    <None Include="Assets\TEST Trending.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
@@ -1948,6 +1966,7 @@
     <None Include="Assets\JsonDotNet\link.xml" />
     <None Include="Assets\Oculus\Avatar\Content\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\CustomHands\Shaders\Hands_01.shader" />
+    <None Include="Assets\TEST.txt" />
     <None Include="Assets\Oculus\SampleFramework\Core\DebugUI\Fonts\Montserrat\OFL.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBSV2.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_SingleComponent.shader" />
@@ -2174,6 +2193,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.9f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:/Projects/Youtube VR/Youtube VR/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
       <HintPath>D:/Projects/Youtube VR/Youtube VR/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -2182,9 +2204,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/Projects/Youtube VR/Youtube VR/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/Projects/Youtube VR/Youtube VR/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.9f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
