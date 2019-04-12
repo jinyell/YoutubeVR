@@ -3,6 +3,8 @@
 ## Overview
 YoutubeVR is a virtual reality project created in Unity. The goal is to create a user experience using [Youtube's API] (https://developers.google.com/youtube/v3/). This project does not use OAuth but an API key.
 
+![Image of Home Page](https://github.com/jinyell/YoutubeVR/blob/master/TubeVR%20Example%20Shots/HomePage.PNG)
+
 ## Target
 * Gear VR
 * Oculus GO
